@@ -27,6 +27,31 @@ body {
   margin:0 45%;
 }
 
+.profile-graph{
+  width:1000px;
+  height:;
+}
+
+.profile-photo{
+  width:100px;
+
+}
+.profile-info{
+  padding:10px 10px;
+  font-size:20px;
+  border-bottom: solid 1px #bebebe;
+  vertical-align: middle;
+  width:80%;
+  margin-left: 50px;
+}
+
+.profile-tag{
+  color:grey;
+}
+
+.profile-data{
+}
+
 .splash {
   text-align: center;
   margin: 10% 0 0 0;

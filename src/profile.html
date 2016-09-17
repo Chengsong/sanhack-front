@@ -1,7 +1,14 @@
 <template>
   <section class="au-animate">
-  	<h1>${name}</h1>
-  	<p>${email}</p>
-  	<input type="password" value="${password}" disabled=true>
+  	<img src="../assets/graph-sample.png" class="profile-graph">
+  	<div class="profile-info"> 
+  	<div><img class="img-circle" width="80" src="https://avatars.githubusercontent.com/u/1?v=3"><span class="profile-data">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${name}</span></div>
+  	</div>
+  	<div class="profile-info">
+  	<div><span class="profile-tag">Email</span><span class="profile-data">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;${email}</span></div>
+  	</div>
+  	<div class="profile-info">
+  	<div><span class="profile-tag">Password </span><span class="profile-data">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ********</span></div>
+	</div>
   </section>
 </template>
