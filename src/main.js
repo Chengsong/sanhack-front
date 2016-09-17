@@ -11,6 +11,7 @@ Bluebird.config({ warnings: false });
 export async function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
+    .singleton(Session)
     .developmentLogging();
 
   // Uncomment the line below to enable animation.
@@ -29,4 +30,14 @@ export async function configure(aurelia) {
   const offline = await System.import('offline-plugin/runtime');
   offline.install();
   */
+}
+
+export class Session {
+  id = '';
+  role = '';
+  reset() {
+    console.log('Resetting session');
+    this.id = '';
+    this.role = '';
+  };
 }
