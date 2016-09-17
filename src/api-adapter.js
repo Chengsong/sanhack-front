@@ -38,4 +38,9 @@ export class ApiAdapter {
   	let profile = { name: 'Chengsong Hua', email: 'myemail@uw.edu', password: 'somepassword' };
   	return profile;
   }
+
+  async getQuestions() {
+    let questions = [{ content: 'Whats your name?', select1: '1', select2: '2', select3: '3', select4: '4', select5: '5' }]
+    return questions;
+  }
 }

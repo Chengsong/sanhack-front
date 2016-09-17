@@ -1,0 +1,29 @@
+<template>
+  <section class="au-animate">
+  	<h2>${heading}</h2>
+  	<form role="form" submit.delegate="submit()">
+  		<div class="form-group" repeat.for="question of questions">
+  			<label for="select${$index}">${question.content}</label>
+  			<select class="form-control" value.bind="selected[$index]" id="select${$index}">
+  				<option disabled selected value> -- select an option -- </option>
+	        <option>${question.select1}</option>
+	        <option>${question.select2}</option>
+	        <option>${question.select3}</option>
+	        <option>${question.select4}</option>
+	        <option>${question.select5}</option>
+	      </select>
+      </div>
+      <div class="form-group">
+      	<label>Evaluate your mood: </label>
+      	<br>
+      	<img src="/assets/emo1.png" class="feel-icon feel-select" click.delegate="select(1)"/>
+      	<img src="/assets/emo2.png" class="feel-icon feel-select" click.delegate="select(2)"/>
+      	<img src="/assets/emo3.png" class="feel-icon feel-select" click.delegate="select(3)"/>
+      	<img src="/assets/emo4.png" class="feel-icon feel-select" click.delegate="select(4)"/>
+      	<img src="/assets/emo5.png" class="feel-icon feel-select" click.delegate="select(5)"/>
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+  </section>
+</template>

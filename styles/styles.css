@@ -82,14 +82,14 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 30px;
+  top: 50px;
   bottom: 0;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-.page-host {
-  margin-top: 5px;
+.feel-select {
+  cursor: pointer;
 }
 
 @media print {

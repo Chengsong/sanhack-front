@@ -1,5 +1,5 @@
 import { inject } from 'aurelia-framework';
-import { ApiAdapter } from 'api-adapter'
+import { ApiAdapter } from 'api-adapter';
 
 @inject(ApiAdapter)
 export class Feels {
