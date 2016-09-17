@@ -131,7 +131,6 @@ switch (ENV) {
   default:
   case 'development':
     process.env.NODE_ENV = 'development';
-    process.env.API_PORT = 8080;
     config = generateConfig(
       baseConfig,
 

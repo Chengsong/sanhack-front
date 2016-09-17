@@ -1,5 +1,5 @@
 import { inject, Lazy } from 'aurelia-framework';
-import { HttpClient } from 'aurelia-fetch-client';
+import { HttpClient, json } from 'aurelia-fetch-client';
 
 // polyfill fetch client conditionally
 const fetch = !self.fetch ? System.import('isomorphic-fetch') : Promise.resolve(self.fetch);
@@ -10,21 +10,23 @@ export class ApiAdapter {
 
 	constructor(getHttpClient) {
     this.getHttpClient = getHttpClient;
+    fetch.then(polyfill => {
+      this.http = this.getHttpClient();
+      this.http.configure(config => {
+        config
+          .useStandardConfiguration()
+          .withBaseUrl(`http://localhost:8080/`)
+          .withDefaults({
+            credentials: 'same-origin'
+          });
+      });
+    });
 	}
 
-	async created() {
-	  // ensure fetch is polyfilled before we create the http client
-	  await fetch;
-	  this.http = this.getHttpClient();
-
-	  this.http.configure(config => {
-	    config
-	      .useStandardConfiguration()
-	      .withBaseUrl(`http://localhost:${process.env.API_PORT}/`);
-	  });
-  }
-
   async getFeels() {
+    let response = await this.http.fetch('feels');
+    let feels = response.json();
+    // return feels;
   	return [
   		{ name: 'Jhon', image: 'https://avatars.githubusercontent.com/u/1?v=3', feel: 1},
   		{ name: 'Chengsong', image: 'https://avatars.githubusercontent.com/u/2?v=3', feel: 2},
@@ -40,7 +42,10 @@ export class ApiAdapter {
   }
 
   async getQuestions() {
-    let questions = [{ content: 'Whats your name?', select1: '1', select2: '2', select3: '3', select4: '4', select5: '5' }]
+    let questions = [
+      { content: 'How long did you sleep?', select1: '1', select2: '2', select3: '3', select4: '4', select5: '5' },
+      { content: 'How much excercise do you do each week?', select1: '1', select2: '2', select3: '3', select4: '4', select5: '5' }
+    ]
     return questions;
   }
 }
