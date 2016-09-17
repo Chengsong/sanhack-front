@@ -2,6 +2,11 @@ body {
   margin: 0;
 }
 
+.feel-icon {
+  width: 50px;
+  padding-bottom: 10px;
+}
+
 .login-body{
   background-image: url("../assets/login-background.jpg");
   background-repeat:no-repeat;
@@ -52,10 +57,14 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
+  top: 30px;
   bottom: 0;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.page-host {
+  margin-top: 5px;
 }
 
 @media print {
@@ -122,7 +131,7 @@ div.au-stagger {
 
 .card .content .name {
   color: white;
-  text-shadow: 0 0 6px rgba(0, 0, 0, .5);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 1);
   font-size: 18px;
 }
 

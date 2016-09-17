@@ -3,7 +3,7 @@ import { ApiAdapter } from 'api-adapter'
 
 @inject(ApiAdapter)
 export class Feels {
-  heading = 'User Feels';
+  heading = 'User Feel';
   users = [];
 
   constructor(adapter) {
