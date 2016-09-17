@@ -1,15 +1,19 @@
 body {
   margin: 0;
+}
+
+.login-body{
   background-image: url("../assets/login-background.jpg");
   background-repeat:no-repeat;
   background-size: cover;
+  height:803px;
 }
 
 .login-head{
-  margin-top: 10%;
+  padding-top: 10%;
   color: white;
   text-align: center;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
   text-shadow: 3px 3px 3px #bebebe;
 }
 
@@ -48,7 +52,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 50px;
+  top: 0;
   bottom: 0;
   overflow-x: hidden;
   overflow-y: auto;
