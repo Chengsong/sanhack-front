@@ -1,30 +1,16 @@
-import {inject, Lazy} from 'aurelia-framework';
-import {HttpClient} from 'aurelia-fetch-client';
+import { inject } from 'aurelia-framework';
+import { ApiAdapter } from 'api-adapter'
 
-// polyfill fetch client conditionally
-const fetch = !self.fetch ? System.import('isomorphic-fetch') : Promise.resolve(self.fetch);
-
-@inject(Lazy.of(HttpClient))
-export class Users {
-  heading = 'Github Users';
+@inject(ApiAdapter)
+export class Feels {
+  heading = 'User Feels';
   users = [];
 
-  constructor(getHttpClient) {
-    this.getHttpClient = getHttpClient;
+  constructor(adapter) {
+    this.adapter = adapter;
   }
 
   async activate() {
-    // ensure fetch is polyfilled before we create the http client
-    await fetch;
-    const http = this.http = this.getHttpClient();
-
-    http.configure(config => {
-      config
-        .useStandardConfiguration()
-        .withBaseUrl('https://api.github.com/');
-    });
-
-    const response = await http.fetch('users');
-    this.users = await response.json();
+    this.users = await this.adapter.getFeels();
   }
 }

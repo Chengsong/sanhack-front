@@ -24,6 +24,16 @@ export class ApiAdapter {
 	  });
   }
 
+  async getFeels() {
+  	return [
+  		{ name: 'Jhon', image: 'https://avatars.githubusercontent.com/u/1?v=3', feel: 1},
+  		{ name: 'Chengsong', image: 'https://avatars.githubusercontent.com/u/2?v=3', feel: 2},
+  		{ name: '加瀬', image: 'https://avatars.githubusercontent.com/u/3?v=3', feel: 3},
+  		{ name: 'Tanaka', image: 'https://avatars.githubusercontent.com/u/4?v=3', feel: 4},
+  		{ name: '岩井', image: 'https://avatars.githubusercontent.com/u/5?v=3', feel: 5},
+  	] 
+  }
+
   async getProfile(id) {
   	let profile = { name: 'Chengsong Hua', email: 'myemail@uw.edu', password: 'somepassword' };
   	return profile;
